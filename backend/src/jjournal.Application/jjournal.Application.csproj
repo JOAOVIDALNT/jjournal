@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\jjournal.Communication\jjournal.Communication.csproj" />
+    <ProjectReference Include="..\..\shared\jjournal.Exception\jjournal.Exception.csproj" />
+    <ProjectReference Include="..\jjournal.Infrastructure\jjournal.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
