@@ -1,8 +1,12 @@
+﻿using jjournal.Domain.Models.Entities.Base;
+
 namespace jjournal.Domain.Models.Entities;
-public class Article
+
+public class Article : BaseEntity
 {
-    public int Id { get; set; }
     public string Title { get; set; } = string.Empty;
-    public string Content { get; set; } = string.Empty;
-    public DateTime PublishDate { get; set; }
+    public string Address { get; set; } = string.Empty;
+    
+    public virtual User? Author { get; set; }
+    public long AuthorId { get; set; }
 }

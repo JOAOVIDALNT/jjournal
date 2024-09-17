@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\jjournal.Domain\jjournal.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

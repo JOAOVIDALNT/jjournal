@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\jjournal.Communication\jjournal.Communication.csproj" />
+    <ProjectReference Include="..\..\shared\jjournal.Exception\jjournal.Exception.csproj" />
+    <ProjectReference Include="..\jjournal.Application\jjournal.Application.csproj" />
+  </ItemGroup>
+
 </Project>
