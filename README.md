@@ -52,6 +52,9 @@ Aplicação com `angular` que consome nossa `api` para expor a página de artigo
 
 
 
-### TASKS
-- [ ] CONSTRUIR ENTIDADES
-- [ ] 
+### INITIAL FEATURES
+- CADASTRO DE ARTIGOS RELACIONADOS À USUÁRIOS
+- AGENDAMENTO DE ARTIGOS
+- COBERTURA DE TESTES
+- DDD
+- TRATAMENTO DE EXCEÇÕES

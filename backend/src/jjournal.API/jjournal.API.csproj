@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
@@ -14,6 +18,7 @@
     <ProjectReference Include="..\..\shared\jjournal.Communication\jjournal.Communication.csproj" />
     <ProjectReference Include="..\..\shared\jjournal.Exception\jjournal.Exception.csproj" />
     <ProjectReference Include="..\jjournal.Application\jjournal.Application.csproj" />
+    <ProjectReference Include="..\jjournal.Infrastructure\jjournal.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,11 +11,11 @@ public class ArticleMap : IEntityTypeConfiguration<Article>
         builder.ToTable("Articles")
             .HasKey(x => x.Id);
         
-        builder.Property(x => x.Title).IsRequired().HasMaxLength(200);
-        builder.Property(x => x.Address).IsRequired();
+        builder.Property(x => x.Title).IsRequired().HasMaxLength(255);
+        builder.Property(x => x.Content).IsRequired();
         
-        builder.HasOne(a => a.Author)
-            .WithMany(u => u.Articles)
-            .HasForeignKey(a => a.AuthorId);
+        builder.HasOne(article => article.Author)
+            .WithMany(user => user.Articles)
+            .HasForeignKey(article => article.AuthorId);
     }
 }

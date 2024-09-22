@@ -11,7 +11,7 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.ToTable("Users")
             .HasKey(x => x.Id);
         
-        builder.Property(x => x.Id).HasMaxLength(30);
+        builder.Property(x => x.Name).HasMaxLength(30);
         builder.Property(x => x.Email).HasMaxLength(100);
     }
 }
