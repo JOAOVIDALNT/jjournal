@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace jjournal.Validators.Tests.User.Register
 {
-    internal class ValidatorTest
+    public class ValidatorTest
     {
+
+        [Fact]
+        public static void Success()
+        {
+            var validator = new RegisterUserValidator();
+
+            var result = validator.Validate();
+
+
+
+
+;;        }
     }
 }

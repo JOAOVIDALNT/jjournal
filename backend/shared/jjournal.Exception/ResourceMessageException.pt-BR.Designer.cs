@@ -22,14 +22,14 @@ namespace jjournal.Exception {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ResourceMessageException {
+    public class ResourceMessageException___Cópia {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceMessageException() {
+        internal ResourceMessageException___Cópia() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace jjournal.Exception {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("jjournal.Exception.ResourceMessageException", typeof(ResourceMessageException).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("jjournal.Exception.ResourceMessageException - Cópia", typeof(ResourceMessageException___Cópia).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Email não pode ser vazio.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Email can&apos;t be empty.&quot;.
         /// </summary>
         public static string EMAIL_EMPTY {
             get {
@@ -70,7 +70,7 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Nome não pode ser vazio.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Name can&apos;t be empty.&quot;.
         /// </summary>
         public static string NAME_EMPTY {
             get {
@@ -79,7 +79,7 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Senha deve ser maior ou igual a 6.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Password should be greater than or equal to 6.&quot;.
         /// </summary>
         public static string PASSWORD_INVALID {
             get {
@@ -88,7 +88,7 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Erro desconhecido.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Unknow error.&quot;.
         /// </summary>
         public static string UNKNOW_ERROR {
             get {

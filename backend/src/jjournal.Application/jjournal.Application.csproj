@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\shared\jjournal.Communication\jjournal.Communication.csproj" />
     <ProjectReference Include="..\..\shared\jjournal.Exception\jjournal.Exception.csproj" />
     <ProjectReference Include="..\jjournal.Infrastructure\jjournal.Infrastructure.csproj" />
