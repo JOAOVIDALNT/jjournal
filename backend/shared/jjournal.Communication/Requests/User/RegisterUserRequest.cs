@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace jjournal.Communication.Requests.User
 {
-    internal class RegisterUserRequest
+    public class RegisterUserRequest
     {
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
     }
 }
