@@ -61,7 +61,7 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Email não pode ser vazio.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;The email can&apos;t be empty.&quot;.
         /// </summary>
         public static string EMAIL_EMPTY {
             get {
@@ -70,7 +70,25 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Nome não pode ser vazio.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Email already registered.&quot;.
+        /// </summary>
+        public static string EMAIL_EXISTS {
+            get {
+                return ResourceManager.GetString("EMAIL_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;The email isn&apos;t valid.&quot;.
+        /// </summary>
+        public static string EMAIL_INVALID {
+            get {
+                return ResourceManager.GetString("EMAIL_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;The name can&apos;t be empty.&quot;.
         /// </summary>
         public static string NAME_EMPTY {
             get {
@@ -79,7 +97,16 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Senha deve ser maior ou igual a 6.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;The name must have minumum 4 and maximum 30 characters.&quot;.
+        /// </summary>
+        public static string NAME_LENGTH {
+            get {
+                return ResourceManager.GetString("NAME_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;The password should be greater than or equal to 6.&quot;.
         /// </summary>
         public static string PASSWORD_INVALID {
             get {
@@ -88,7 +115,7 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Erro desconhecido.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;Unknow error.&quot;.
         /// </summary>
         public static string UNKNOW_ERROR {
             get {

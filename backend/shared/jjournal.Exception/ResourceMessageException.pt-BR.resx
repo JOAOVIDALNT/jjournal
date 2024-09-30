@@ -118,15 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="NAME_EMPTY" xml:space="preserve">
-    <value>"Name can't be empty."</value>
+    <value>"O nome não pode ser vazio."</value>
   </data>
   <data name="EMAIL_EMPTY" xml:space="preserve">
-    <value>"Email can't be empty."</value>
+    <value>"O email não pode ser vazio."</value>
   </data>
   <data name="PASSWORD_INVALID" xml:space="preserve">
-    <value>"Password should be greater than or equal to 6."</value>
+    <value>"A senha deve conter pelo menos 6 caracteres."</value>
   </data>
   <data name="UNKNOW_ERROR" xml:space="preserve">
-    <value>"Unknow error."</value>
+    <value>"Erro desconhecido"</value>
+  </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>"O email não é válido."</value>
+  </data>
+  <data name="EMAIL_EXISTS" xml:space="preserve">
+    <value>"Email já está registrado."</value>
+  </data>
+  <data name="NAME_LENGTH" xml:space="preserve">
+    <value>"O nome deve ter no mínimo 4 e no máximo 30 caracteres."</value>
   </data>
 </root>

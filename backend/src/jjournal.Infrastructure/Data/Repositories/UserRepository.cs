@@ -9,6 +9,6 @@ namespace jjournal.Infrastructure.Data.Repositories
      */
     public class UserRepository(AppDbContext db) : Repository<User>(db), IUserRepository
     {
-        public Task<bool> UserExists(string email) => _db.Users.AnyAsync(u => u.Email.Equals(email));  
+        public async Task<bool> UserExists(string email) => await _db.Users.AnyAsync(u => u.Email.Equals(email));  
     }
 }
