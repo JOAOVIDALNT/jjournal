@@ -1,4 +1,4 @@
-﻿namespace jjournal.Application.Security
+﻿namespace jjournal.Application.Services.Security
 {
     public interface IPasswordHasher
     {

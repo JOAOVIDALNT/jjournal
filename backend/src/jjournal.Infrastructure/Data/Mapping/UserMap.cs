@@ -14,6 +14,6 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.HasIndex(x => x.Email).IsUnique();
 
         builder.Property(x => x.Name).HasMaxLength(30);
-        builder.Property(x => x.Email).HasMaxLength(100);
+        builder.Property(x => x.Email).HasMaxLength(255);
     }
 }

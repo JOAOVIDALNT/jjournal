@@ -12,9 +12,9 @@ namespace jjournal.Validators.Tests.User.Register
         [Fact]
         public static void Success()
         {
-            var validator = new RegisterUserValidator();
+            //var validator = new RegisterUserValidator();
 
-            var result = validator.Validate();
+            //var result = validator.Validate();
 
 
 

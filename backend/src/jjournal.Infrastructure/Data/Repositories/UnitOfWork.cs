@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using jjournal.Domain.Interfaces.Repositories;
 
 namespace jjournal.Infrastructure.Data.Repositories
 {
-    class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
+        protected readonly AppDbContext _db;
+        public UnitOfWork(AppDbContext db) => _db = db;
+        public async Task Commit() => await _db.SaveChangesAsync();
     }
 }

@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using jjournal.Communication.Requests.User;
+using jjournal.Domain.Models.Entities;
 
 namespace jjournal.Application.Services.Mapper
 {
-    internal class MappingConfig
+    public class MappingConfig : Profile
     {
+        public MappingConfig() 
+        {
+            RequestToDomain();
+        }
+
+        private void RequestToDomain()
+        {
+            CreateMap<RegisterUserRequest, User>()
+                .ForMember(dest => dest.Password, opt => opt.Ignore());
+        }
     }
 }
