@@ -8,5 +8,5 @@ public class Article : BaseEntity
     public string Content { get; set; } = string.Empty;
     
     public virtual User? Author { get; set; }
-    public long AuthorId { get; set; }
+    public Guid AuthorId { get; set; }
 }

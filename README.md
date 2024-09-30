@@ -1,20 +1,27 @@
+
+## VISÃO GERAL
 ### Conceito
 Aplicação `fullstack` que expõe meus relatórios de estudo e artigos `.md`, projetos, designs de projetos e informações relevantes.
 
 ### API
-`Minimal-Api` com `dotnet` que expõe os dados de artigos para o `frontend` do portifólio.
+`API` com `dotnet` que expõe os dados de artigos para o `frontend` do portifólio.
 
 ### WEB
 Aplicação com `angular` que consome nossa `api` para expor a página de artigos, além de consumir a `api` do `github` para expor os projetos.
 
+## DOCUMENTAÇÃO
 ### `Backend Summary` 
 #### Serviços
 
 - V1
-	- `GET`
-		- `/articles -> list of articles`
-	- `POST`
-		- `/article -> {registerJson}, {[file]}`
+	- Artigos
+		- `GET`
+			- `/articles -> list of articles`
+		- `POST`
+			- `/article -> {articleJson}`
+	- Usuários
+		- `POST`
+			- `/login`
 
 #### Entidades
 ##### `v1`

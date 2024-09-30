@@ -9,7 +9,7 @@ public class ArticleMap : IEntityTypeConfiguration<Article>
     public void Configure(EntityTypeBuilder<Article> builder)
     {
         builder.ToTable("Articles")
-            .HasKey(x => x.Id);
+            .HasKey(x => x.Uuid);
         
         builder.Property(x => x.Title).IsRequired().HasMaxLength(255);
         builder.Property(x => x.Content).IsRequired();
