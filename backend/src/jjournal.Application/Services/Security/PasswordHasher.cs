@@ -1,6 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 
-namespace jjournal.Application.Security
+namespace jjournal.Application.Services.Security
 {
     public class PasswordHasher : IPasswordHasher
     {
@@ -12,7 +12,7 @@ namespace jjournal.Application.Security
             return hashedPass;
         }
 
-        public bool VerifyPassword(string givenPassword ,string storedPassword)
+        public bool VerifyPassword(string givenPassword, string storedPassword)
         {
             return BCrypt.Net.BCrypt.Verify(givenPassword, storedPassword);
         }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using jjournal.Domain.Interfaces.Repositories;
+using jjournal.Domain.Models.Entities;
 
 namespace jjournal.Infrastructure.Data.Repositories
 {
-    internal class ArticleRepository
+    public class ArticleRepository(AppDbContext db) : Repository<Article>(db), IArticleRepository
     {
-    }
+    }   
 }

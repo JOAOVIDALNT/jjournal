@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using jjournal.Application.Security;
+using jjournal.Application.Services.Security;
 using jjournal.Application.UseCases.User.Register.Validator;
 using jjournal.Communication.Requests.User;
 using jjournal.Domain.Interfaces.Repositories;
@@ -10,15 +10,17 @@ namespace jjournal.Application.UseCases.User.Register
     public class RegisterUserUseCase : IRegisterUserUseCase
     {
         private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _uow;
         private readonly IRegisterUserValidator _validator;
         private readonly IMapper _mapper;
         private readonly IPasswordHasher _passwordHasher;
-        public RegisterUserUseCase(IUserRepository userRepository, IRegisterUserValidator validator, IMapper mapper, IPasswordHasher passwordHasher)
+        public RegisterUserUseCase(IUserRepository userRepository, IRegisterUserValidator validator, IMapper mapper, IPasswordHasher passwordHasher, IUnitOfWork uow)
         {
             _userRepository = userRepository;
             _validator = validator;
             _mapper = mapper;
             _passwordHasher = passwordHasher;
+            _uow = uow;
         }
         public async Task Execute(RegisterUserRequest request)
         {
@@ -28,8 +30,7 @@ namespace jjournal.Application.UseCases.User.Register
             entity.Password = _passwordHasher.HashPassword(request.Password);
 
             await _userRepository.CreateAsync(entity);
-
-
+            await _uow.Commit();
         }
         
         private void Validate(RegisterUserRequest request)

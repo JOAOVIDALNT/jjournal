@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using jjournal.Domain.Models.Entities;
 
 namespace jjournal.Domain.Interfaces.Repositories
 {
-    internal interface IArticleRepository
+    public interface IArticleRepository : IRepository<Article>
     {
     }
 }
