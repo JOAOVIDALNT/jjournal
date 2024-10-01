@@ -136,6 +136,6 @@
     <value>"Email já está registrado."</value>
   </data>
   <data name="NAME_LENGTH" xml:space="preserve">
-    <value>"O nome deve ter no mínimo 4 e no máximo 30 caracteres."</value>
+    <value>"O nome deve ter no mínimo 3 e no máximo 30 caracteres."</value>
   </data>
 </root>

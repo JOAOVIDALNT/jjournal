@@ -97,7 +97,7 @@ namespace jjournal.Exception {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;The name must have minumum 4 and maximum 30 characters.&quot;.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &quot;The name must have minumum 3 and maximum 30 characters.&quot;.
         /// </summary>
         public static string NAME_LENGTH {
             get {

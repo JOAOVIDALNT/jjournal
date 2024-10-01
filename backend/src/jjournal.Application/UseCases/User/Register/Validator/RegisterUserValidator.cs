@@ -5,7 +5,7 @@ using jjournal.Exception;
 
 namespace jjournal.Application.UseCases.User.Register.Validator
 {
-    public class RegisterUserValidator : AbstractValidator<RegisterUserRequest>, IRegisterUserValidator
+    public class RegisterUserValidator : AbstractValidator<RegisterUserRequest>
     {
         private readonly IUserRepository _userRepository;
         public RegisterUserValidator(IUserRepository userRepository)
@@ -14,7 +14,7 @@ namespace jjournal.Application.UseCases.User.Register.Validator
 
             RuleFor(x => x.Name)
                 .NotEmpty().WithMessage(ResourceMessageException.NAME_EMPTY)
-                .Length(4, 30).WithMessage(ResourceMessageException.NAME_LENGTH);
+                .Length(3, 30).WithMessage(ResourceMessageException.NAME_LENGTH);
 
 
             RuleFor(x => x.Email)
