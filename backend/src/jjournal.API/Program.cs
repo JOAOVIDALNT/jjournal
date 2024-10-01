@@ -1,4 +1,5 @@
 using jjournal.API.Filters;
+using jjournal.API.Middlewares;
 using jjournal.Application;
 using jjournal.Infrastructure.Extensions;
 
@@ -14,6 +15,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseMiddleware<CultureMiddleware>();
+
+
 
 if (app.Environment.IsDevelopment())
 {
