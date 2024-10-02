@@ -18,7 +18,7 @@ namespace jjournal.Application
 
         private static void AddServices(this IServiceCollection services)
         {
-            //services.AddTransient<IRegisterUserValidator, RegisterUserValidator>();
+            services.AddTransient<IRegisterUserValidator, RegisterUserValidator>();
             services.AddTransient<IPasswordHasher, PasswordHasher>();
         }
 
