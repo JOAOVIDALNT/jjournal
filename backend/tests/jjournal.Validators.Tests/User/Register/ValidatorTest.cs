@@ -122,6 +122,7 @@ namespace jjournal.Validators.Tests.User.Register
             Assert.Single(errors);
             Assert.Equal(ResourceMessageException.PASSWORD_INVALID, errors.First());
         }
+
         private static RegisterUserValidator CreateMock(string? email = null) // ESTÁTICO POIS NÃO ACESSA DADOS DA INSTÂNCIA (INDEPENDENTE)
         {
             var userRepository = new UserRepositoryBuilder();
