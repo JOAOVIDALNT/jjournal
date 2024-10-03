@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\shared\jjournal.Communication\jjournal.Communication.csproj" />
+    <ProjectReference Include="..\..\src\jjournal.Application\jjournal.Application.csproj" />
     <ProjectReference Include="..\..\src\jjournal.Domain\jjournal.Domain.csproj" />
   </ItemGroup>
 

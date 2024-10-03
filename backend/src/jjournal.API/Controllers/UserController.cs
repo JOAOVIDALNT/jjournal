@@ -13,12 +13,13 @@ namespace jjournal.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(RegisterUserResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> RegisterUser([FromServices] IRegisterUserUseCase useCase, [FromBody] RegisterUserRequest request)
         {
-            await useCase.Execute(request);
+            var result = await useCase.Execute(request);
 
-            return NoContent();
+            return Created(string.Empty, result);
         }
     }
 }

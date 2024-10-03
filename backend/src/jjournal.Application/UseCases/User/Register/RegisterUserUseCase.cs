@@ -2,6 +2,7 @@
 using jjournal.Application.Services.Security;
 using jjournal.Application.UseCases.User.Register.Validator;
 using jjournal.Communication.Requests.User;
+using jjournal.Communication.Responses;
 using jjournal.Domain.Interfaces.Repositories;
 using jjournal.Exception.Base;
 
@@ -10,7 +11,7 @@ namespace jjournal.Application.UseCases.User.Register
     public class RegisterUserUseCase : IRegisterUserUseCase
     {
         private readonly IUserRepository _userRepository;
-        private readonly IUnitOfWork _uow;
+        private readonly IUnitOfWork _uow;  
         private readonly IRegisterUserValidator _validator;
         private readonly IMapper _mapper;
         private readonly IPasswordHasher _passwordHasher;
@@ -22,20 +23,25 @@ namespace jjournal.Application.UseCases.User.Register
             _passwordHasher = passwordHasher;
             _uow = uow;
         }
-        public async Task Execute(RegisterUserRequest request)
+        public async Task<RegisterUserResponse> Execute(RegisterUserRequest request)
         {
-            Validate(request);
+            await Validate(request);
 
             var entity = _mapper.Map<Domain.Models.Entities.User>(request);
             entity.Password = _passwordHasher.HashPassword(request.Password);
 
             await _userRepository.CreateAsync(entity);
             await _uow.Commit();
+
+            return new RegisterUserResponse
+            {
+                Name = request.Name,
+            };
         }
         
-        private void Validate(RegisterUserRequest request)
+        private async Task Validate(RegisterUserRequest request)
         {
-            var result = _validator.Validate(request);
+            var result = await _validator.ValidateAsync(request);
 
             if (!result.IsValid)
             {
