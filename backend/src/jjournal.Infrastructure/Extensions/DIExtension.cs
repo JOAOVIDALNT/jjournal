@@ -12,8 +12,12 @@ public static class DIExtension
 {
     public static void AddInfra(this IServiceCollection services, IConfiguration config)
     {
-        services.AddDatabase(config);
         services.AddRepositories();
+
+        if (config.GetValue<bool>("InMemoryTest"))
+            return;
+
+        services.AddDatabase(config);
     }
 
     private static void AddDatabase(this IServiceCollection services, IConfiguration config)
