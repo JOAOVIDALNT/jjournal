@@ -122,5 +122,13 @@ namespace jjournal.Exception {
                 return ResourceManager.GetString("UNKNOW_ERROR", resourceCulture);
             }
         }
+
+        public static string LOGIN_INVALID
+        {
+            get
+            {
+                return ResourceManager.GetString("LOGIN_INVALID", resourceCulture);
+            }
+        }
     }
 }
