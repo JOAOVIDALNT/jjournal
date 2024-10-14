@@ -138,4 +138,7 @@
   <data name="NAME_LENGTH" xml:space="preserve">
     <value>"The name must have minumum 3 and maximum 30 characters."</value>
   </data>
+  <data name="LOGIN_INVALID" xml:space="preserve">
+    <value>"Invalid email or password."</value>
+  </data>
 </root>
