@@ -10,19 +10,19 @@ namespace jjournal.Application.UseCases.User.Register
 {
     public class RegisterUserUseCase : IRegisterUserUseCase
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IUnitOfWork _uow;  
-        private readonly IRegisterUserValidator _validator;
-        private readonly IMapper _mapper;
-        private readonly IPasswordHasher _passwordHasher;
-        public RegisterUserUseCase(IUserRepository userRepository, IRegisterUserValidator validator, IMapper mapper, IPasswordHasher passwordHasher, IUnitOfWork uow)
-        {
-            _userRepository = userRepository;
-            _validator = validator;
-            _mapper = mapper;
-            _passwordHasher = passwordHasher;
-            _uow = uow;
-        }
+            private readonly IUserRepository _userRepository;
+            private readonly IUnitOfWork _uow;  
+            private readonly IRegisterUserValidator _validator;
+            private readonly IMapper _mapper;
+            private readonly IPasswordHasher _passwordHasher;
+            public RegisterUserUseCase(IUserRepository userRepository, IRegisterUserValidator validator, IMapper mapper, IPasswordHasher passwordHasher, IUnitOfWork uow)
+            {
+                _userRepository = userRepository;
+                _validator = validator;
+                _mapper = mapper;
+                _passwordHasher = passwordHasher;
+                _uow = uow;
+            }
         public async Task<RegisterUserResponse> Execute(RegisterUserRequest request)
         {
             await Validate(request);
