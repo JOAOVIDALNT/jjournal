@@ -30,6 +30,8 @@ namespace jjournal.Application.UseCases.User.Register
             var entity = _mapper.Map<Domain.Models.Entities.User>(request);
             entity.Password = _passwordHasher.HashPassword(request.Password);
 
+            // TODO: ADICIONAR ROLES
+
             await _userRepository.CreateAsync(entity);
             await _uow.Commit();
 

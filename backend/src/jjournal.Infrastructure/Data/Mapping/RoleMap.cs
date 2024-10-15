@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using jjournal.Domain.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace jjournal.Infrastructure.Data.Mapping
 {
-    internal class RoleMap
+    public class RoleMap : IEntityTypeConfiguration<Role>
     {
+        public void Configure(EntityTypeBuilder<Role> builder)
+        {
+            builder.ToTable("Roles")
+                .HasKey(x => x.Uuid);
+
+            builder.HasIndex(x => x.Name).IsUnique();
+            builder.Property(x => x.Name).HasMaxLength(30);
+        }
     }
 }
