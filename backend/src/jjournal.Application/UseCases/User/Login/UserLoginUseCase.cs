@@ -16,13 +16,15 @@ namespace jjournal.Application.UseCases.User.Login
         private readonly IUserLoginValidator _validator;
         private readonly IMapper _mapper;
         private readonly IPasswordHasher _passwordHasher;
-        public UserLoginUseCase(IUserRepository userRepository, IUserLoginValidator validator, IMapper mapper, IPasswordHasher passwordHasher, IUnitOfWork uow)
+        private readonly ITokenGenerator _tokenGenerator;
+        public UserLoginUseCase(IUserRepository userRepository, IUserLoginValidator validator, IMapper mapper, IPasswordHasher passwordHasher, IUnitOfWork uow, ITokenGenerator tokenGenerator)
         {
             _userRepository = userRepository;
             _validator = validator;
             _mapper = mapper;
             _passwordHasher = passwordHasher;
             _uow = uow;
+            _tokenGenerator = tokenGenerator;
         }
 
         public async Task<UserLoginResponse> Execute(UserLoginRequest request)
@@ -30,16 +32,15 @@ namespace jjournal.Application.UseCases.User.Login
             await Validate(request);
 
             // VALIDO SE A SENHA ESTÁ CORRETA
-            var user = await _userRepository.GetAsync(x => x.Email == request.Email, false);
+            var user = await _userRepository.GetAsync(x => x.Email == request.Email, false) ?? throw new InvalidLoginException();
 
-            var verify = _passwordHasher.VerifyPassword(request.Password, user!.Password);
+            var verify = _passwordHasher.VerifyPassword(request.Password, user.Password);
 
             if (!verify)
-            {
                 throw new InvalidLoginException();
-            }
 
-            // GERAR E DEVOLVER O TOKEN
+            // TODO: GERAR E DEVOLVER O TOKEN
+            var token = _tokenGenerator.GenerateToken(user);
 
             return new UserLoginResponse();
         }
