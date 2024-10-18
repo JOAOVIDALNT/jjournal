@@ -9,7 +9,7 @@ namespace jjournal.Infrastructure.Data.Mapping
         public void Configure(EntityTypeBuilder<UserRole> builder)
         {
             builder.ToTable("UserRoles")
-                .HasKey(ur => new { ur.UserId, ur.RoleId });
+                .HasKey(x => new {x.UserId, x.RoleId});
 
             builder.HasOne(ur => ur.User)
                 .WithMany(u => u.UserRoles)

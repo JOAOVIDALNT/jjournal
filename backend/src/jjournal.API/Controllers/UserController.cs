@@ -21,6 +21,6 @@ namespace jjournal.API.Controllers
             return Created(string.Empty, result);
         }
 
-        public async Task<IActionResult> Login([FromServices] )
+        //public async Task<IActionResult> Login([FromServices] )
     }
 }

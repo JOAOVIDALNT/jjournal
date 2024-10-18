@@ -59,8 +59,10 @@ namespace jjournal.UseCases.Tests.User.Register
             var mapper = MapperBuilder.Build();
             var hasher = PasswordHasherBuilder.Build();
             var validator = new RegisterUserValidatorBuilder();
+            var roleMock = new Mock<IRoleRepository>();
+            var userRoleMock = new Mock<IUserRoleRepository>();
 
-            return new RegisterUserUseCase(repo, validator.Build(repo), mapper, hasher, uow);
+            return new RegisterUserUseCase(repo, validator.Build(repo), mapper, hasher, uow, roleMock.Object, userRoleMock.Object);
         }
     }
 }
