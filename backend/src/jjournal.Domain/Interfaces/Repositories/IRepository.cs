@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Linq.Expressions;
 
 namespace jjournal.Domain.Interfaces.Repositories
 {
@@ -6,7 +7,7 @@ namespace jjournal.Domain.Interfaces.Repositories
     {
         Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null, int pageSize = 0, int pageNumber = 1);
         Task<T?> GetAsync(Expression<Func<T, bool>>? filter = null, bool tracked = true);
-        Task CreateAsync(T entity);
+        Task<EntityEntry<T>> CreateAsync(T entity);
         void Delete(T entity);
         void Update(T entity);
     }

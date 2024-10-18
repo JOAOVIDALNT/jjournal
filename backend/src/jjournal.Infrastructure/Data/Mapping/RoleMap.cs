@@ -12,7 +12,7 @@ namespace jjournal.Infrastructure.Data.Mapping
                 .HasKey(x => x.Uuid);
 
             builder.HasIndex(x => x.Name).IsUnique();
-            builder.Property(x => x.Name).HasMaxLength(30);
+            builder.Property(x => x.Name).HasMaxLength(20);
         }
     }
 }

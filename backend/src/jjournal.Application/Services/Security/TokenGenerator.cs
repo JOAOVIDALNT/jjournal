@@ -41,8 +41,8 @@ namespace jjournal.Application.Services.Security
 
             claims.AddClaim(new Claim(ClaimTypes.Name, user.Name));
 
-            foreach (var role in user.UserRoles)
-                claims.AddClaim(new Claim(ClaimTypes.Role, role.Role!.Name));
+            //foreach (var role in user.UserRoles)
+            //    claims.AddClaim(new Claim(ClaimTypes.Role, role.Role!.Name));
 
             return claims;
         }

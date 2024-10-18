@@ -1,5 +1,6 @@
 ﻿using jjournal.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
 
 namespace jjournal.Infrastructure.Data.Repositories
@@ -15,7 +16,7 @@ namespace jjournal.Infrastructure.Data.Repositories
             this.dbSet = _db.Set<T>();
         }
 
-        public async Task CreateAsync(T entity) => await dbSet.AddAsync(entity);
+        public async Task<EntityEntry<T>> CreateAsync(T entity) => await dbSet.AddAsync(entity);
         public void Delete(T entity) => dbSet.Remove(entity);
         public void Update(T entity) => dbSet.Update(entity);
 
