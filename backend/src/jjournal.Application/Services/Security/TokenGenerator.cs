@@ -1,4 +1,5 @@
-﻿using jjournal.Domain.Models.Entities;
+﻿using jjournal.Domain.Interfaces.Repositories;
+using jjournal.Domain.Models.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -41,8 +42,10 @@ namespace jjournal.Application.Services.Security
 
             claims.AddClaim(new Claim(ClaimTypes.Name, user.Name));
 
-            //foreach (var role in user.UserRoles)
-            //    claims.AddClaim(new Claim(ClaimTypes.Role, role.Role!.Name));
+            foreach (var role in user.UserRoles)
+            {
+                claims.AddClaim(new Claim(ClaimTypes.Role, role.Role!.Name));
+            }
 
             return claims;
         }

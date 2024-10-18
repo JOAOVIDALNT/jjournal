@@ -31,18 +31,16 @@ namespace jjournal.Application.UseCases.User.Login
         {
             await Validate(request);
 
-            // VALIDO SE A SENHA ESTÁ CORRETA
-            var user = await _userRepository.GetAsync(x => x.Email == request.Email, false) ?? throw new InvalidLoginException();
+            var user = await _userRepository.GetUserWithRolesAsync(request.Email);
 
             var verify = _passwordHasher.VerifyPassword(request.Password, user.Password);
 
             if (!verify)
                 throw new InvalidLoginException();
 
-            // TODO: GERAR E DEVOLVER O TOKEN
             var token = _tokenGenerator.GenerateToken(user);
 
-            return new UserLoginResponse();
+            return new UserLoginResponse { Token = token };
         }
 
         private async Task Validate(UserLoginRequest request)

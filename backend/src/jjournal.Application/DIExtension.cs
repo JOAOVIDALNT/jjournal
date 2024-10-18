@@ -1,5 +1,7 @@
 ﻿using jjournal.Application.Services.Mapper;
 using jjournal.Application.Services.Security;
+using jjournal.Application.UseCases.User.Login;
+using jjournal.Application.UseCases.User.Login.Validator;
 using jjournal.Application.UseCases.User.Register;
 using jjournal.Application.UseCases.User.Register.Validator;
 using Microsoft.Extensions.Configuration;
@@ -20,11 +22,14 @@ namespace jjournal.Application
         {
             services.AddTransient<IRegisterUserValidator, RegisterUserValidator>();
             services.AddTransient<IPasswordHasher, PasswordHasher>();
+            services.AddTransient<ITokenGenerator, TokenGenerator>();
+            services.AddTransient<IUserLoginValidator, UserLoginValidator>();
         }
 
         private static void AddUseCases(this IServiceCollection services)
         {
             services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
+            services.AddScoped<IUserLoginUseCase, UserLoginUseCase>();
         }
 
         private static void AddAutoMapper(this IServiceCollection services)
